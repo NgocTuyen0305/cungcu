@@ -46,22 +46,35 @@
   </body>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const btn = document.querySelector(".btn");
-      const quehuong = document.querySelector(".quehuong");
-      const phat = document.querySelector(".phat");
-      const audio = document.querySelector(".audio");
+   document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.querySelector(".btn");
+  const quehuong = document.querySelector(".quehuong");
+  const phat = document.querySelector(".phat");
+  const audio = document.querySelector(".audio");
 
-      btn.addEventListener("click", () => {
-        quehuong.classList.add("thaphuong");
+  function handleClick() {
+    quehuong.classList.add("thaphuong");
 
-        setTimeout(() => {
-          if (phat && !phat.classList.contains("hienphat")) {
-            phat.classList.add("hienphat");
-            audio.play();
-          }
-        }, 1500);
-      });
-    });
+    setTimeout(() => {
+      if (phat && !phat.classList.contains("hienphat")) {
+        phat.classList.add("hienphat");
+        audio.play();
+      }
+    }, 1500);
+  }
+
+  // Sử dụng sự kiện "click" thay vì "DOMContentLoaded"
+  btn.addEventListener("click", handleClick);
+
+  // Thêm sự kiện "pageshow" cho trình duyệt trên điện thoại
+  window.addEventListener("pageshow", function(event) {
+    // Check nếu trang được tải lại từ cache
+    if (event.persisted) {
+      // Xử lý sự kiện click
+      handleClick();
+    }
+  });
+});
+
   </script>
 </html>
