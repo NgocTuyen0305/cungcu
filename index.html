@@ -53,7 +53,7 @@
     btn.addEventListener("click", () => {
       quehuong.classList.add("thaphuong");
       setTimeout(() => {
-        if (phat) {
+        if (phat && !phat.classList.contains("hienphat")) {
           phat.classList.add("hienphat");
         }
         audio.play();
