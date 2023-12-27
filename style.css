@@ -150,4 +150,8 @@ body {
         font-weight: bold;
         color: white;
       }
+      .hienphat {
+        opacity: 1 !important;
+        filter: blur(0px);
+      }
 }
