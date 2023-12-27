@@ -120,7 +120,7 @@ body {
         /* transform: translate(); */
         opacity: 0;
         filter: blur(5px);
-        transition: opacity 1s ease-in-out, filter 2s ease-in-out,
+        transition: opacity .5s ease-in-out, filter 2s ease-in-out,
           transform 2s ease-in;
         transition: all 3s;
       }
