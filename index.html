@@ -46,18 +46,22 @@
   </body>
 
   <script>
-    const btn = document.querySelector(".btn");
-    const quehuong = document.querySelector(".quehuong");
-    const phat = document.querySelector(".phat");
-    const audio = document.querySelector(".audio");
-    btn.addEventListener("click", () => {
-      quehuong.classList.add("thaphuong");
-      setTimeout(() => {
-        if (phat && !phat.classList.contains("hienphat")) {
-          phat.classList.add("hienphat");
-        }
-        audio.play();
-      }, 1500);
+    document.addEventListener("DOMContentLoaded", function () {
+      const btn = document.querySelector(".btn");
+      const quehuong = document.querySelector(".quehuong");
+      const phat = document.querySelector(".phat");
+      const audio = document.querySelector(".audio");
+
+      btn.addEventListener("click", () => {
+        quehuong.classList.add("thaphuong");
+
+        setTimeout(() => {
+          if (phat && !phat.classList.contains("hienphat")) {
+            phat.classList.add("hienphat");
+            audio.play();
+          }
+        }, 1500);
+      });
     });
   </script>
 </html>
