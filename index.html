@@ -53,7 +53,9 @@
     btn.addEventListener("click", () => {
       quehuong.classList.add("thaphuong");
       setTimeout(() => {
-        phat.classList.add("hienphat");
+        if (phat) {
+          phat.classList.add("hienphat");
+        }
         audio.play();
       }, 1500);
     });
